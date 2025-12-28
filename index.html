@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRATEGIC THINGS: The 2026 Transmission</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Special+Elite&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Fullscreen Toggle Button -->
+    <button class="fullscreen-toggle" id="fullscreenBtn" title="Toggle Fullscreen">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+        </svg>
+    </button>
+
+    <!-- Parallax Background Layers -->
+    <div class="parallax-container">
+        <div class="parallax-layer parallax-bg"></div>
+        <div class="parallax-layer parallax-fog"></div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Flickering Lights Overlay -->
+    <div class="flicker-overlay"></div>
+
+    <!-- Main Content -->
+    <div class="landing-container">
+        <!-- Title Section -->
+        <div class="title-section">
+            <h1 class="main-title glitch" data-text="STRATEGIC THINGS">STRATEGIC THINGS</h1>
+            <p class="subtitle flicker-text">The 2026 Transmission</p>
+            <div class="title-underline"></div>
+        </div>
+
+        <!-- Message Section -->
+        <div class="message-section">
+            <p class="warning-text typewriter">Something strange is happening in Hawkins...</p>
+            <p class="warning-text typewriter delay-1">The Upside Down is calling...</p>
+            <p class="warning-text typewriter delay-2">Are you brave enough to answer?</p>
+        </div>
+
+        <!-- Begin Button -->
+        <button class="begin-button" id="beginBtn">
+            <span class="button-text">LET'S BEGIN</span>
+            <span class="button-glow"></span>
+        </button>
+
+        <!-- Atmospheric Elements -->
+        <div class="static-noise"></div>
+    </div>
+
+    <!-- Spooky Floating Elements -->
+    <div class="floating-elements">
+        <div class="demogorgon-shadow shadow-1"></div>
+        <div class="demogorgon-shadow shadow-2"></div>
+        <div class="christmas-lights"></div>
+    </div>
+
+    <!-- Video Section (Hidden by default) -->
+    <div class="video-section" id="videoSection">
+        <div class="video-container">
+            <video id="introVideo" class="intro-video" controls>
+                <source src="assets/st-intro.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <button class="skip-video-btn" id="skipVideoBtn">Skip Intro →</button>
+    </div>
+
+    <!-- Post-Video Screen (Hidden by default) -->
+    <div class="post-video-section" id="postVideoSection">
+        <div class="post-video-bg"></div>
+        <div class="post-video-overlay"></div>
+        
+        <div class="post-video-content">
+            <h2 class="post-video-title glitch" data-text="THE UPSIDE DOWN AWAITS">THE UPSIDE DOWN AWAITS</h2>
+            <p class="post-video-text">The portal has been opened...</p>
+            <p class="post-video-text">Your adventure of a lifetime begins now...</p>
+            
+            <button class="journey-button" id="journeyBtn">
+                <span class="button-text">LET'S BEGIN THE JOURNEY!!</span>
+                <span class="button-glow"></span>
+            </button>
+        </div>
+        
+        <!-- Particles for post-video screen -->
+        <div class="post-video-particles" id="postVideoParticles"></div>
+    </div>
+
+    <!-- Story Section (Hidden by default) -->
+    <div class="story-section" id="storySection">
+        <!-- Skip Story Button -->
+        <button class="skip-story-btn" id="skipStoryBtn">
+            <span>⏭️ Skip Story</span>
+        </button>
+
+        <!-- Floating Spores Background -->
+        <div class="spores-container" id="storySpores"></div>
+        <div class="vhs-overlay"></div>
+        <div class="chromatic-effect"></div>
+
+        <!-- Story Slides Container -->
+        <div class="story-slides-container">
+            <!-- Slide 1: Title/Hook -->
+            <div class="story-slide active" data-slide="1">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="THE SIGNAL FROM THE HORIZON">THE SIGNAL FROM THE HORIZON</h2>
+                    <div class="story-date">December 31, 2025 - 23:47:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">It is New Year's Eve.</p>
+                        <p class="story-text fade-in-text delay-1">For the past week, a strange electromagnetic interference has been localized around our office servers.</p>
+                        <p class="story-text fade-in-text delay-2">Files are self-encrypting...</p>
+                        <p class="story-text fade-in-text delay-3">And the coffee in the breakroom is behaving... <span class="glitch-word">strangely</span>.</p>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 2: The Discovery -->
+            <div class="story-slide" data-slide="2">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="TRANSMISSION DETECTED">TRANSMISSION DETECTED</h2>
+                    <div class="story-date">December 31, 2025 - 23:52:13</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">Our scanners have picked up a <span class="highlight-text">'Positive Frequency'</span>...</p>
+                        <p class="story-text fade-in-text delay-1">A version of 2026 where our team achieves every goal...</p>
+                        <p class="story-text fade-in-text delay-2">Hits every target...</p>
+                        <p class="story-text fade-in-text delay-3">And stays perfectly connected.</p>
+                        <div class="frequency-wave"></div>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 3: The Conflict -->
+            <div class="story-slide" data-slide="3">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story danger" data-text="⚠️ THREAT IDENTIFIED ⚠️">⚠️ THREAT IDENTIFIED ⚠️</h2>
+                    <div class="story-date">December 31, 2025 - 23:55:47</div>
+                    <div class="story-text-container red-alert">
+                        <p class="story-text fade-in-text">But there's a <span class="danger-text">problem</span>...</p>
+                        <p class="story-text fade-in-text delay-1">A shadow entity is trying to drag that 'Horizon' into the <span class="danger-text">Upside Down</span>.</p>
+                        <p class="story-text fade-in-text delay-2">If we don't bridge the gap today...</p>
+                        <p class="story-text fade-in-text delay-3">The 'Horizon' will <span class="glitch-word danger-text">vanish forever</span>.</p>
+                    </div>
+                    <div class="shadow-entity"></div>
+                    <div class="static-flash danger"></div>
+                </div>
+            </div>
+
+            <!-- Slide 4: The Mission -->
+            <div class="story-slide" data-slide="4">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="YOUR MISSION">YOUR MISSION</h2>
+                    <div class="story-date">December 31, 2025 - 23:58:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">To reach the <span class="highlight-text">2026 Horizon</span>, we must bypass <span class="highlight-text">8 Security Layers</span>...</p>
+                        <p class="story-text fade-in-text delay-1">Left by the original <span class="highlight-text">Hawkins Lab</span> researchers.</p>
+                        <p class="story-text fade-in-text delay-2">You are <span class="highlight-text">The Party</span>.</p>
+                        <p class="story-text fade-in-text delay-3">Each level you solve strengthens the signal.</p>
+                    </div>
+                    <div class="security-grid"></div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 5: The Call to Action -->
+            <div class="story-slide" data-slide="5">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="ARE YOU READY?">ARE YOU READY?</h2>
+                    <div class="story-date">January 1, 2026 - 00:00:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text epic">Lose your way, and we stay stuck in the static.</p>
+                        <p class="story-text fade-in-text delay-1 epic">Friends don't lie...</p>
+                        <p class="story-text fade-in-text delay-2 epic">And they don't miss deadlines.</p>
+                        <p class="story-text fade-in-text delay-3 highlight-text epic large">Let's bring the Horizon home.</p>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proceed Button (Shows after story) -->
+        <button class="proceed-btn" id="proceedBtn" style="display: none;">
+            <span>NEXT →</span>
+            <div class="btn-glow"></div>
+        </button>
+
+        <!-- Story Navigation Indicator -->
+        <div class="story-nav-indicator" id="storyNavIndicator">
+            <div class="nav-text">Press SPACE or click to continue...</div>
+            <div class="nav-dots">
+                <span class="dot active" data-dot="1"></span>
+                <span class="dot" data-dot="2"></span>
+                <span class="dot" data-dot="3"></span>
+                <span class="dot" data-dot="4"></span>
+                <span class="dot" data-dot="5"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEVEL 1: THE FLICKERING THRESHOLD -->
+    <div class="level-section" id="level1Section">
+        <!-- Skip Story Button -->
+        <button class="skip-story-btn level-skip" id="skipLevel1StoryBtn">
+            <span>⏭️ Skip Story</span>
+        </button>
+
+        <!-- Floating Spores Background -->
+        <div class="spores-container" id="level1Spores"></div>
+        <div class="vhs-overlay"></div>
+        <div class="chromatic-effect"></div>
+
+        <!-- Level 1 Story Slides -->
+        <div class="story-slides-container" id="level1StorySlides">
+            <!-- Slide 1: Setup -->
+            <div class="story-slide active" data-slide="1">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="LEVEL 1: THE FLICKERING THRESHOLD">LEVEL 1: THE FLICKERING THRESHOLD</h2>
+                    <div class="story-date">January 1, 2026 - 00:05:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">We've bypassed the main server...</p>
+                        <p class="story-text fade-in-text delay-1">But the <span class="highlight-text">Hawkins Lab lobby</span> has been completely 'overwritten' by <span class="danger-text">1984 architecture</span>.</p>
+                        <p class="story-text fade-in-text delay-2">The digital doors are <span class="danger-text">dead</span>.</p>
+                        <p class="story-text fade-in-text delay-3">No mouse click or keyboard command will work here.</p>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 2: The Discovery -->
+            <div class="story-slide" data-slide="2">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="POWER GRID DETECTED">POWER GRID DETECTED</h2>
+                    <div class="story-date">January 1, 2026 - 00:06:30</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">The lab's original AI is trying to speak to us...</p>
+                        <p class="story-text fade-in-text delay-1">Through the building's <span class="highlight-text">power grid</span>.</p>
+                        <p class="story-text fade-in-text delay-2">Specifically, the <span class="highlight-text">holiday string lights</span>...</p>
+                        <p class="story-text fade-in-text delay-3">Joyce Byers left behind.</p>
+                        <div class="frequency-wave"></div>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 3: The Twist -->
+            <div class="story-slide" data-slide="3">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story danger" data-text="⚠️ WARNING: RESIDUAL ECHOES ⚠️">⚠️ WARNING: RESIDUAL ECHOES ⚠️</h2>
+                    <div class="story-date">January 1, 2026 - 00:08:15</div>
+                    <div class="story-text-container red-alert">
+                        <p class="story-text fade-in-text">These aren't just colors; they are <span class="danger-text">Residual Echoes</span>.</p>
+                        <p class="story-text fade-in-text delay-1">Every time the lights flash, they are trying to spell out the <span class="highlight-text">'Frequency of Welcome.'</span></p>
+                        <p class="story-text fade-in-text delay-2">But be warned: the light wall is <span class="danger-text">corrupted</span>.</p>
+                        <p class="story-text fade-in-text delay-3">Some colors are shifting, and some are 'ghost lights' that mean <span class="glitch-word danger-text">nothing</span>.</p>
+                    </div>
+                    <div class="shadow-entity"></div>
+                    <div class="static-flash danger"></div>
+                </div>
+            </div>
+
+            <!-- Slide 4: The Challenge -->
+            <div class="story-slide" data-slide="4">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="YOUR TASK">YOUR TASK</h2>
+                    <div class="story-date">January 1, 2026 - 00:10:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text epic">Look closely at the sequence.</p>
+                        <p class="story-text fade-in-text delay-1 epic">The wall doesn't just want you to see the color...</p>
+                        <p class="story-text fade-in-text delay-2 epic">It wants you to <span class="highlight-text">translate the pulse</span>.</p>
+                        <p class="story-text fade-in-text delay-3 highlight-text epic large">Filter out the static and find the word that grants us passage.</p>
+                    </div>
+                    <div class="security-grid"></div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 5: The Stakes -->
+            <div class="story-slide" data-slide="5">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story danger" data-text="THE STAKES">THE STAKES</h2>
+                    <div class="story-date">January 1, 2026 - 00:11:47</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text epic">If we fail this...</p>
+                        <p class="story-text fade-in-text delay-1 epic danger-text">The Lab's lockdown protocol engages...</p>
+                        <p class="story-text fade-in-text delay-2 epic danger-text">And we'll be stuck in the lobby...</p>
+                        <p class="story-text fade-in-text delay-3 danger-text epic large">For the rest of 2026.</p>
+                    </div>
+                    <div class="static-flash danger"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proceed to Puzzle Button -->
+        <button class="proceed-btn" id="proceedToLevel1PuzzleBtn" style="display: none;">
+            <span>LEVEL 1 →</span>
+            <div class="btn-glow"></div>
+        </button>
+
+        <!-- Story Navigation Indicator -->
+        <div class="story-nav-indicator level-nav" id="level1NavIndicator">
+            <div class="nav-text">Press SPACE or click to continue...</div>
+            <div class="nav-dots">
+                <span class="dot active" data-dot="1"></span>
+                <span class="dot" data-dot="2"></span>
+                <span class="dot" data-dot="3"></span>
+                <span class="dot" data-dot="4"></span>
+                <span class="dot" data-dot="5"></span>
+            </div>
+        </div>
+
+        <!-- Level 1 Puzzle: Alphabet Wall -->
+        <div class="puzzle-container" id="level1Puzzle" style="display: none;">
+            <div class="puzzle-background"></div>
+            
+            <h2 class="puzzle-title">THE ALPHABET WALL</h2>
+            <p class="puzzle-subtitle">Decode the flickering lights before the bulbs burn out...</p>
+
+            <!-- Alphabet Wall with Christmas Lights -->
+            <div class="alphabet-wall">
+                <!-- Row 1: A-H (Arched upwards) -->
+                <div class="alphabet-row row-arch-up">
+                    <div class="letter-bulb" data-letter="A" data-color="red">
+                        <div class="bulb red-bulb"></div>
+                        <div class="letter">A</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="B" data-color="blue">
+                        <div class="bulb blue-bulb"></div>
+                        <div class="letter">B</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="C" data-color="yellow">
+                        <div class="bulb yellow-bulb"></div>
+                        <div class="letter">C</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="D" data-color="green">
+                        <div class="bulb green-bulb"></div>
+                        <div class="letter">D</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="E" data-color="white">
+                        <div class="bulb white-bulb"></div>
+                        <div class="letter">E</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="F" data-color="orange">
+                        <div class="bulb orange-bulb"></div>
+                        <div class="letter">F</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="G" data-color="purple">
+                        <div class="bulb purple-bulb"></div>
+                        <div class="letter">G</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="H" data-color="pink">
+                        <div class="bulb pink-bulb"></div>
+                        <div class="letter">H</div>
+                    </div>
+                </div>
+
+                <!-- Row 2: I-Q (Straight) -->
+                <div class="alphabet-row row-straight">
+                    <div class="letter-bulb" data-letter="I" data-color="red">
+                        <div class="bulb red-bulb"></div>
+                        <div class="letter">I</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="J" data-color="blue">
+                        <div class="bulb blue-bulb"></div>
+                        <div class="letter">J</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="K" data-color="yellow">
+                        <div class="bulb yellow-bulb"></div>
+                        <div class="letter">K</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="L" data-color="green">
+                        <div class="bulb green-bulb"></div>
+                        <div class="letter">L</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="M" data-color="white">
+                        <div class="bulb white-bulb"></div>
+                        <div class="letter">M</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="N" data-color="orange">
+                        <div class="bulb orange-bulb"></div>
+                        <div class="letter">N</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="O" data-color="purple">
+                        <div class="bulb purple-bulb"></div>
+                        <div class="letter">O</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="P" data-color="pink">
+                        <div class="bulb pink-bulb"></div>
+                        <div class="letter">P</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="Q" data-color="blue">
+                        <div class="bulb blue-bulb"></div>
+                        <div class="letter">Q</div>
+                    </div>
+                </div>
+
+                <!-- Row 3: R-Z (Dipping downwards) -->
+                <div class="alphabet-row row-dip-down">
+                    <div class="letter-bulb" data-letter="R" data-color="red">
+                        <div class="bulb red-bulb"></div>
+                        <div class="letter">R</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="S" data-color="blue">
+                        <div class="bulb blue-bulb"></div>
+                        <div class="letter">S</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="T" data-color="yellow">
+                        <div class="bulb yellow-bulb"></div>
+                        <div class="letter">T</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="U" data-color="green">
+                        <div class="bulb green-bulb"></div>
+                        <div class="letter">U</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="V" data-color="white">
+                        <div class="bulb white-bulb"></div>
+                        <div class="letter">V</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="W" data-color="orange">
+                        <div class="bulb orange-bulb"></div>
+                        <div class="letter">W</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="X" data-color="purple">
+                        <div class="bulb purple-bulb"></div>
+                        <div class="letter">X</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="Y" data-color="pink">
+                        <div class="bulb pink-bulb"></div>
+                        <div class="letter">Y</div>
+                    </div>
+                    <div class="letter-bulb" data-letter="Z" data-color="pink">
+                        <div class="bulb pink-bulb"></div>
+                        <div class="letter">Z</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hint Section -->
+            <div class="hint-section">
+                <p class="hint-text">💡 Watch the lights flicker. The pattern reveals the frequency...</p>
+            </div>
+
+            <!-- Next Level Button -->
+            <button class="next-level-btn" id="nextLevelBtn" style="display: none;">
+                <span>UNLOCK</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ========================================
+         LEVEL 2: The Frequency of the Void
+         ======================================== -->
+    <div class="level-section" id="level2Section">
+        <!-- Background Spores -->
+        <div class="level-spores" id="level2Spores"></div>
+
+        <!-- Level 2 Story Slides -->
+        <div class="story-slides-container" id="level2StorySlides">
+            <!-- Slide 1: Setup -->
+            <div class="story-slide active" data-slide="1">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="LEVEL 2: THE FREQUENCY OF THE VOID">LEVEL 2: THE FREQUENCY OF THE VOID</h2>
+                    <div class="story-date">January 1, 2026 - 00:15:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">The lobby doors have hissed shut behind you, locking you into the Laboratory's communication hub.</p>
+                        <p class="story-text fade-in-text delay-1">The air is colder here, smelling of ozone and old electronics.</p>
+                        <p class="story-text fade-in-text delay-2">You find yourself in front of a massive, wall-sized radio receiver—<span class="highlight-text">The Heathkit Signal Seeker</span>.</p>
+                        <p class="story-text fade-in-text delay-3">It's glowing, but it's not picking up any local stations.</p>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 2: The Discovery -->
+            <div class="story-slide" data-slide="2">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="SIGNAL DETECTED">SIGNAL DETECTED</h2>
+                    <div class="story-date">January 1, 2026 - 00:16:30</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">The oscilloscope screen flickers to life, displaying chaotic green waves that surge and collapse like breathing.</p>
+                        <p class="story-text fade-in-text delay-1">Static fills the room—white noise that seems to whisper your name.</p>
+                        <p class="story-text fade-in-text delay-2">Then, beneath the hiss, you hear it: <span class="highlight-text">a melody</span>.</p>
+                        <div class="frequency-wave"></div>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 3: The Conflict -->
+            <div class="story-slide" data-slide="3">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story danger" data-text="⚠️ INTERCEPTED TRANSMISSION ⚠️">⚠️ INTERCEPTED TRANSMISSION ⚠️</h2>
+                    <div class="story-date">January 1, 2026 - 00:18:15</div>
+                    <div class="story-text-container red-alert">
+                        <p class="story-text fade-in-text">The <span class="highlight-text">2026 Horizon</span> is trying to send us a blueprint of our future, but the signal is being intercepted.</p>
+                        <p class="story-text fade-in-text delay-1">A <span class="danger-text">'Shadow Entity'</span> has caught the transmission and twisted it.</p>
+                        <p class="story-text fade-in-text delay-2">It's playing a melody we all know, but it's been warped by the gravity of the Upside Down.</p>
+                        <p class="story-text fade-in-text delay-3">It sounds <span class="danger-text glitch-word">wrong</span>—reversed, frantic, and shadowed by static.</p>
+                    </div>
+                    <div class="shadow-entity"></div>
+                    <div class="static-flash danger"></div>
+                </div>
+            </div>
+
+            <!-- Slide 4: The Challenge -->
+            <div class="story-slide" data-slide="4">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="YOUR TASK">YOUR TASK</h2>
+                    <div class="story-date">January 1, 2026 - 00:20:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text epic">To stabilize the frequency, you must identify the <span class="highlight-text">'Core Rhythm.'</span></p>
+                        <p class="story-text fade-in-text delay-1 epic">If you can name the song being distorted through the void, the radio will lock onto the signal.</p>
+                        <p class="story-text fade-in-text delay-2 epic">It will lead us to the next sector.</p>
+                    </div>
+                    <div class="security-grid"></div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 5: The Hook -->
+            <div class="story-slide" data-slide="5">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="LISTEN CAREFULLY">LISTEN CAREFULLY</h2>
+                    <div class="story-date">January 1, 2026 - 00:21:47</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text epic">Close your eyes.</p>
+                        <p class="story-text fade-in-text delay-1 epic">Listen past the distortion.</p>
+                        <p class="story-text fade-in-text delay-2 highlight-text epic large">What is the Horizon trying to tell us?</p>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proceed to Puzzle Button -->
+        <button class="proceed-btn" id="proceedToLevel2PuzzleBtn" style="display: none;">
+            <span>LEVEL 2 →</span>
+            <div class="btn-glow"></div>
+        </button>
+
+        <!-- Story Navigation Indicator -->
+        <div class="story-nav-indicator level-nav" id="level2NavIndicator">
+            <div class="nav-text">Press SPACE or click to continue...</div>
+            <div class="nav-dots">
+                <span class="dot active" data-dot="1"></span>
+                <span class="dot" data-dot="2"></span>
+                <span class="dot" data-dot="3"></span>
+                <span class="dot" data-dot="4"></span>
+                <span class="dot" data-dot="5"></span>
+            </div>
+        </div>
+
+        <!-- Skip Story Button -->
+        <button class="skip-story-btn" id="skipLevel2StoryBtn">
+            <span>↓ SKIP STORY</span>
+        </button>
+
+
+        <!-- Level 2 Puzzle -->
+        <div class="puzzle-container" id="level2Puzzle" style="display: none;">
+            <!-- Puzzle Background -->
+            <div class="puzzle-background level2-bg"></div>
+
+            <!-- Puzzle Title -->
+            <h2 class="puzzle-title">THE HEATHKIT SIGNAL SEEKER</h2>
+            <p class="puzzle-subtitle">Communication Hub - Sector 7</p>
+
+            <!-- Radio & Oscilloscope Container -->
+            <div class="radio-container">
+                <!-- Oscilloscope Display -->
+                <div class="oscilloscope-container">
+                    <div class="oscilloscope-screen">
+                        <canvas id="oscilloscopeCanvas" width="600" height="200"></canvas>
+                        <div class="screen-scanline"></div>
+                    </div>
+                    <div class="oscilloscope-label">SIGNAL ANALYZER</div>
+                </div>
+
+                <!-- Audio Controls -->
+                <div class="audio-controls">
+                    <audio id="level2Audio" src="assets/nes_new.mp3" preload="auto"></audio>
+                    <div class="control-buttons">
+                        <button class="audio-btn" id="playBtn">
+                            <span>▶ PLAY</span>
+                        </button>
+                        <button class="audio-btn" id="pauseBtn">
+                            <span>⏸ PAUSE</span>
+                        </button>
+                        <button class="audio-btn" id="downloadBtn">
+                            <span>⬇ DOWNLOAD</span>
+                        </button>
+                    </div>
+                    <div class="audio-wave">
+                        <span class="wave-bar"></span>
+                        <span class="wave-bar"></span>
+                        <span class="wave-bar"></span>
+                        <span class="wave-bar"></span>
+                        <span class="wave-bar"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hint Section -->
+            <div class="hint-section">
+                <p class="hint-text">💡 The signal is reversed. Identify the Core Rhythm to unlock the frequency...</p>
+            </div>
+
+            <!-- Unlock Button -->
+            <button class="next-level-btn" id="level2UnlockBtn" style="display: none;">
+                <span>UNLOCK</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ========================================
+         LEVEL 3: The Watcher in the Static
+         ======================================== -->
+    <div class="level-section" id="level3Section">
+        <!-- Background Spores -->
+        <div class="level-spores" id="level3Spores"></div>
+        <div class="vhs-overlay"></div>
+        <div class="chromatic-effect"></div>
+
+        <!-- Level 3 Story Slides -->
+        <div class="story-slides-container" id="level3StorySlides">
+            <!-- Slide 1: Setup -->
+            <div class="story-slide active" data-slide="1">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="LEVEL 3: THE WATCHER IN THE STATIC">LEVEL 3: THE WATCHER IN THE STATIC</h2>
+                    <div class="story-date">January 1, 2026 - 00:25:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">The music from the radio fades into a low, electrical hum.</p>
+                        <p class="story-text fade-in-text delay-1">Suddenly, the wall behind you hums to life.</p>
+                        <p class="story-text fade-in-text delay-2">You're standing in the <span class="highlight-text">Hawkins Lab Security Annex</span>.</p>
+                        <p class="story-text fade-in-text delay-3">A dozen heavy, glass-fronted CRT monitors flicker with a pale green light.</p>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 2: The Discovery -->
+            <div class="story-slide" data-slide="2">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="TEMPORAL VIEWERS ACTIVE">TEMPORAL VIEWERS ACTIVE</h2>
+                    <div class="story-date">January 1, 2026 - 00:26:30</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">These aren't just cameras; they are <span class="highlight-text">'Temporal Viewers'</span>.</p>
+                        <p class="story-text fade-in-text delay-1">They are filming the hallway leading to the <span class="highlight-text">2026 Horizon</span>.</p>
+                        <p class="story-text fade-in-text delay-2">The feed shows something moving in the shadows...</p>
+                        <div class="frequency-wave"></div>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 3: The Conflict -->
+            <div class="story-slide" data-slide="3">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story danger" data-text="⚠️ ELECTROMAGNETIC INTERFERENCE ⚠️">⚠️ ELECTROMAGNETIC INTERFERENCE ⚠️</h2>
+                    <div class="story-date">January 1, 2026 - 00:28:15</div>
+                    <div class="story-text-container red-alert">
+                        <p class="story-text fade-in-text">The <span class="danger-text">'Shadow Entity'</span> knows we've made it this far.</p>
+                        <p class="story-text fade-in-text delay-1">It's trying to <span class="danger-text">'white out'</span> our vision by flooding the feed with electromagnetic interference.</p>
+                        <p class="story-text fade-in-text delay-2">The footage is looping at a frantic, unstable speed.</p>
+                        <p class="story-text fade-in-text delay-3">Somewhere in the frames of this digital ghost-story, the Lab technicians hid a <span class="highlight-text glitch-word">Security Bypass Code</span>.</p>
+                    </div>
+                    <div class="shadow-entity"></div>
+                    <div class="static-flash danger"></div>
+                </div>
+            </div>
+
+            <!-- Slide 4: The Challenge -->
+            <div class="story-slide" data-slide="4">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="THE GHOST FRAME">THE GHOST FRAME</h2>
+                    <div class="story-date">January 1, 2026 - 00:30:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text epic">It only exists for a fraction of a second—<span class="highlight-text">a glitch in the nightmare</span>.</p>
+                        <p class="story-text fade-in-text delay-1 epic">To move forward, the Party must synchronize their focus.</p>
+                        <p class="story-text fade-in-text delay-2 epic danger-text">You cannot look away.</p>
+                        <p class="story-text fade-in-text delay-3 epic large">If you blink, you miss the breach.</p>
+                    </div>
+                    <div class="security-grid"></div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 5: The Stakes -->
+            <div class="story-slide" data-slide="5">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story danger" data-text="SYSTEM OVERHEATING">SYSTEM OVERHEATING</h2>
+                    <div class="story-date">January 1, 2026 - 00:31:47</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text epic">We need to capture that <span class="highlight-text">'Ghost Frame'</span> before the monitors overheat...</p>
+                        <p class="story-text fade-in-text delay-1 epic danger-text">...and the surveillance system melts into a permanent blackout.</p>
+                        <p class="story-text fade-in-text delay-2 highlight-text epic large">Watch the static...</p>
+                        <p class="story-text fade-in-text delay-3 highlight-text epic large">The truth is hiding in the glitch.</p>
+                    </div>
+                    <div class="static-flash danger"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proceed to Puzzle Button -->
+        <button class="proceed-btn" id="proceedToLevel3PuzzleBtn" style="display: none;">
+            <span>LEVEL 3 →</span>
+            <div class="btn-glow"></div>
+        </button>
+
+        <!-- Story Navigation Indicator -->
+        <div class="story-nav-indicator level-nav" id="level3NavIndicator">
+            <div class="nav-text">Press SPACE or click to continue...</div>
+            <div class="nav-dots">
+                <span class="dot active" data-dot="1"></span>
+                <span class="dot" data-dot="2"></span>
+                <span class="dot" data-dot="3"></span>
+                <span class="dot" data-dot="4"></span>
+                <span class="dot" data-dot="5"></span>
+            </div>
+        </div>
+
+        <!-- Skip Story Button -->
+        <button class="skip-story-btn" id="skipLevel3StoryBtn">
+            <span>↓ SKIP STORY</span>
+        </button>
+
+        <!-- Level 3 Puzzle: CCTV Surveillance -->
+        <div class="puzzle-container" id="level3Puzzle" style="display: none;">
+            <!-- Puzzle Background -->
+            <div class="puzzle-background level3-bg"></div>
+
+            <!-- Puzzle Title -->
+            <h2 class="puzzle-title">SECURITY ANNEX - TEMPORAL VIEWERS</h2>
+            <p class="puzzle-subtitle">Surveillance System - Sector 9</p>
+
+            <!-- CCTV Monitor Container -->
+            <div class="cctv-container">
+                <div class="cctv-monitor">
+                    <div class="crt-screen">
+                        <video id="level3Video" class="cctv-video" controls>
+                            <source src="assets/cctv-hawkins-yard.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="crt-scanlines"></div>
+                        <div class="crt-tracking"></div>
+                        <div class="crt-vignette"></div>
+                    </div>
+                    <div class="cctv-label">
+                        <span class="recording-indicator">● REC</span>
+                        <span class="timestamp" id="cctvTimestamp">01/01/2026 - 00:31:47</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hint Section -->
+            <div class="hint-section">
+                <p class="hint-text">💡 Watch carefully... The bypass code appears for only a fraction of a second in the glitch...</p>
+            </div>
+
+            <!-- Unlock Button -->
+            <button class="next-level-btn" id="level3UnlockBtn">
+                <span>UNLOCK</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ========================================
+         LEVEL 4: The Resonance of the Void
+         ======================================== -->
+    <div class="level-section" id="level4Section">
+        <!-- Background Spores -->
+        <div class="level-spores" id="level4Spores"></div>
+        <div class="vhs-overlay"></div>
+        <div class="chromatic-effect"></div>
+
+        <!-- Level 4 Story Slides -->
+        <div class="story-slides-container" id="level4StorySlides">
+            <!-- Slide 1: Setup -->
+            <div class="story-slide active" data-slide="1">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="LEVEL 4: THE RESONANCE OF THE VOID">LEVEL 4: THE RESONANCE OF THE VOID</h2>
+                    <div class="story-date">January 1, 2026 - 00:35:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">The security monitors have melted into piles of plastic.</p>
+                        <p class="story-text fade-in-text delay-1">We've reached the <span class="highlight-text">Sensory Deprivation Sector</span>.</p>
+                        <p class="story-text fade-in-text delay-2">In this part of the lab, <span class="highlight-text">sound is the only thing that matters</span>.</p>
+                        <p class="story-text fade-in-text delay-3">The air is heavy, and you can feel a low-frequency vibration rattling your teeth.</p>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 2: The Discovery -->
+            <div class="story-slide" data-slide="2">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="DEEP AUDIO DETECTED">DEEP AUDIO DETECTED</h2>
+                    <div class="story-date">January 1, 2026 - 00:36:30</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">It's the <span class="highlight-text">'Deep Audio'</span> of the 2026 Horizon...</p>
+                        <p class="story-text fade-in-text delay-1">But it's been trapped inside a <span class="danger-text">sonic shadow</span>.</p>
+                        <p class="story-text fade-in-text delay-2">The vibrations are unlike anything you've heard before...</p>
+                        <div class="frequency-wave"></div>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 3: The Conflict -->
+            <div class="story-slide" data-slide="3">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story danger" data-text="⚠️ SONIC SHADOW DETECTED ⚠️">⚠️ SONIC SHADOW DETECTED ⚠️</h2>
+                    <div class="story-date">January 1, 2026 - 00:38:15</div>
+                    <div class="story-text-container red-alert">
+                        <p class="story-text fade-in-text">The <span class="danger-text">'Shadow Entity'</span> has disguised the final coordinate as a roar of pure static and wind.</p>
+                        <p class="story-text fade-in-text delay-1">To the human ear, it sounds like the <span class="danger-text">Void itself</span>.</p>
+                        <p class="story-text fade-in-text delay-2">But the researchers at Hawkins knew a secret:</p>
+                        <p class="story-text fade-in-text delay-3"><span class="highlight-text glitch-word">Sound has a shape.</span></p>
+                    </div>
+                    <div class="shadow-entity"></div>
+                    <div class="static-flash danger"></div>
+                </div>
+            </div>
+
+            <!-- Slide 4: The Challenge -->
+            <div class="story-slide" data-slide="4">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="VISUAL FREQUENCY SCANNER">VISUAL FREQUENCY SCANNER</h2>
+                    <div class="story-date">January 1, 2026 - 00:40:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text epic">They are developing a <span class="highlight-text">'Visual Frequency Scanner'</span> to see the invisible.</p>
+                        <p class="story-text fade-in-text delay-1 epic">We are broadcasting the signal now.</p>
+                        <p class="story-text fade-in-text delay-2 epic">It sounds like a nightmare, but within the vibration is a <span class="highlight-text">'Sonic Blueprint'</span>.</p>
+                    </div>
+                    <div class="security-grid"></div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 5: The Stakes -->
+            <div class="story-slide" data-slide="5">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story danger" data-text="TRUST THE SPECTRUM">TRUST THE SPECTRUM</h2>
+                    <div class="story-date">January 1, 2026 - 00:41:47</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text epic">Don't listen to the noise...</p>
+                        <p class="story-text fade-in-text delay-1 epic danger-text">Look for the architecture hidden inside the waves.</p>
+                        <p class="story-text fade-in-text delay-2 highlight-text epic large">If you can see the image in the sound...</p>
+                        <p class="story-text fade-in-text delay-3 highlight-text epic large">The path to Level 5 will appear.</p>
+                    </div>
+                    <div class="static-flash danger"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proceed to Puzzle Button -->
+        <button class="proceed-btn" id="proceedToLevel4PuzzleBtn" style="display: none;">
+            <span>LEVEL 4 →</span>
+            <div class="btn-glow"></div>
+        </button>
+
+        <!-- Story Navigation Indicator -->
+        <div class="story-nav-indicator level-nav" id="level4NavIndicator">
+            <div class="nav-text">Press SPACE or click to continue...</div>
+            <div class="nav-dots">
+                <span class="dot active" data-dot="1"></span>
+                <span class="dot" data-dot="2"></span>
+                <span class="dot" data-dot="3"></span>
+                <span class="dot" data-dot="4"></span>
+                <span class="dot" data-dot="5"></span>
+            </div>
+        </div>
+
+        <!-- Skip Story Button -->
+        <button class="skip-story-btn" id="skipLevel4StoryBtn">
+            <span>↓ SKIP STORY</span>
+        </button>
+
+        <!-- Level 4 Puzzle: Sound Lab -->
+        <div class="puzzle-container" id="level4Puzzle" style="display: none;">
+            <!-- Puzzle Background -->
+            <div class="puzzle-background level4-bg"></div>
+
+            <!-- Puzzle Title -->
+            <h2 class="puzzle-title">SENSORY DEPRIVATION SECTOR</h2>
+            <p class="puzzle-subtitle">Psychic Research Lab - Sector 11</p>
+
+            <!-- Two Column Layout -->
+            <div class="sound-lab-container">
+                <!-- Left Column: Audio Player -->
+                <div class="sound-lab-left">
+                    <div class="audio-workstation">
+                        <div class="workstation-header">
+                            <span class="workstation-title">🔊 DEEP AUDIO BROADCAST</span>
+                        </div>
+                        <div class="waveform-display">
+                            <audio id="level4Audio" controls>
+                                <source src="assets/l4audio.wav" type="audio/wav">
+                                Your browser does not support the audio tag.
+                            </audio>
+                            <div class="sound-bars">
+                                <span class="sound-bar"></span>
+                                <span class="sound-bar"></span>
+                                <span class="sound-bar"></span>
+                                <span class="sound-bar"></span>
+                                <span class="sound-bar"></span>
+                                <span class="sound-bar"></span>
+                                <span class="sound-bar"></span>
+                                <span class="sound-bar"></span>
+                            </div>
+                        </div>
+                        <button class="download-audio-btn" id="downloadAudioBtn">
+                            <span>⬇ DOWNLOAD AUDIO</span>
+                        </button>
+                        <div class="frequency-display">
+                            <div class="freq-label">FREQUENCY: <span class="freq-value">528 Hz</span></div>
+                            <div class="freq-label">AMPLITUDE: <span class="freq-value">HIGH</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Scanner -->
+                <div class="sound-lab-right">
+                    <div class="scanner-panel">
+                        <div class="scanner-screen">
+                            <div class="scanner-icon">🔬</div>
+                            <h3 class="scanner-title">VISUAL FREQUENCY SCANNER</h3>
+                            <p class="scanner-desc">Sound has a shape. Let the spectrum reveal the truth.</p>
+                        </div>
+                        <button class="scanner-btn" id="initiateScanBtn">
+                            <span>INITIATE SPECTRAL SCAN</span>
+                            <div class="btn-pulse"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Riddle Modal (Hidden by default) -->
+            <div class="riddle-modal" id="riddleModal" style="display: none;">
+                <div class="riddle-container">
+                    <div class="riddle-header">
+                        <span class="riddle-title">🔮 PSYCHIC TRANSMISSION</span>
+                        <button class="riddle-close" id="riddleCloseBtn">✕</button>
+                    </div>
+                    <div class="riddle-body">
+                        <p class="riddle-text">The ears are being <span class="danger-text">lied</span> to.</p>
+                        <p class="riddle-text">Trust only what the <span class="highlight-text">Spectrum</span> reveals.</p>
+                        <div class="riddle-divider"></div>
+                        <p class="riddle-clue">💡 Use a Spectrogram to visualize the hidden image within the audio:</p>
+                        <a href="https://nsspot.herokuapp.com/imagetoaudio/" target="_blank" class="spectrogram-link">
+                            🔗 OPEN SPECTROGRAM TOOL
+                        </a>
+                        <p class="riddle-hint">Upload the audio file and watch the visual frequency unfold...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hint Section -->
+            <div class="hint-section">
+                <p class="hint-text">💡 Sound has a shape. What image is hidden in the waveform?</p>
+            </div>
+
+            <!-- Unlock Button -->
+            <button class="next-level-btn" id="level4UnlockBtn">
+                <span>UNLOCK</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ========================================
+         LEVEL 5: The DNA of the Horizon
+         ======================================== -->
+    <div class="level-section" id="level5Section">
+        <!-- Background Spores -->
+        <div class="level-spores" id="level5Spores"></div>
+        <div class="vhs-overlay"></div>
+        <div class="chromatic-effect"></div>
+
+        <!-- Level 5 Story Slides -->
+        <div class="story-slides-container" id="level5StorySlides">
+            <!-- Slide 1: Setup -->
+            <div class="story-slide active" data-slide="1">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="LEVEL 5: THE DNA OF THE HORIZON">LEVEL 5: THE DNA OF THE HORIZON</h2>
+                    <div class="story-date">January 1, 2026 - 00:45:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">We've bypassed the sensory alarms...</p>
+                        <p class="story-text fade-in-text delay-1">But we've hit a <span class="danger-text">'Logic Wall.'</span></p>
+                        <p class="story-text fade-in-text delay-2">The <span class="highlight-text">2026 Horizon</span> has sent us a transmission in the form of a single image file.</p>
+                        <p class="story-text fade-in-text delay-3">On your screens, it looks like a standard blueprint of Hawkins Lab.</p>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 2: The Discovery -->
+            <div class="story-slide" data-slide="2">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="UNSTABLE SIGNATURE DETECTED">UNSTABLE SIGNATURE DETECTED</h2>
+                    <div class="story-date">January 1, 2026 - 00:46:30</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">The Lab's internal sensors are screaming...</p>
+                        <p class="story-text fade-in-text delay-1">The file's signature is <span class="danger-text">'unstable.'</span></p>
+                        <p class="story-text fade-in-text delay-2">The image is just a <span class="highlight-text">skin</span>...</p>
+                        <p class="story-text fade-in-text delay-3">The real heart of the message is hidden <span class="highlight-text">beneath the pixels</span>.</p>
+                        <div class="frequency-wave"></div>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 3: The Conflict -->
+            <div class="story-slide" data-slide="3">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story danger" data-text="⚠️ LOGIC SCRAMBLED ⚠️">⚠️ LOGIC SCRAMBLED ⚠️</h2>
+                    <div class="story-date">January 1, 2026 - 00:48:15</div>
+                    <div class="story-text-container red-alert">
+                        <p class="story-text fade-in-text">The <span class="danger-text">'Shadow Entity'</span> has scrambled the command to open the final gates.</p>
+                        <p class="story-text fade-in-text delay-1">It thinks we are just <span class="danger-text">'users'</span> who only look at the surface of things.</p>
+                        <p class="story-text fade-in-text delay-2">It doesn't expect us to look into the <span class="highlight-text">DNA of the machine</span> itself.</p>
+                        <p class="story-text fade-in-text delay-3">We must stop being observers and start being <span class="glitch-word highlight-text">investigators</span>.</p>
+                    </div>
+                    <div class="shadow-entity"></div>
+                    <div class="static-flash danger"></div>
+                </div>
+            </div>
+
+            <!-- Slide 4: The Challenge -->
+            <div class="story-slide" data-slide="4">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="THE RAW DATA">THE RAW DATA</h2>
+                    <div class="story-date">January 1, 2026 - 00:50:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text epic">Look at the blueprints, but <span class="danger-text">don't trust your eyes</span>.</p>
+                        <p class="story-text fade-in-text delay-1 epic">The clue left by the last researcher says:</p>
+                        <p class="story-text fade-in-text delay-2 highlight-text epic large">"The truth is written in the margins of the machine."</p>
+                        <p class="story-text fade-in-text delay-3 epic">"View the <span class="highlight-text">raw data</span>."</p>
+                    </div>
+                    <div class="security-grid"></div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 5: The Stakes -->
+            <div class="story-slide" data-slide="5">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story danger" data-text="PEEL BACK THE SURFACE">PEEL BACK THE SURFACE</h2>
+                    <div class="story-date">January 1, 2026 - 00:51:47</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text epic">You must peel back the image and read the code.</p>
+                        <p class="story-text fade-in-text delay-1 epic">Find the <span class="highlight-text">stabilizing frequency</span> hidden in the binary noise...</p>
+                        <p class="story-text fade-in-text delay-2 danger-text epic large">Or the Horizon will collapse before we ever reach it.</p>
+                        <p class="story-text fade-in-text delay-3 highlight-text epic large">The machine doesn't see a picture. It sees text.</p>
+                    </div>
+                    <div class="static-flash danger"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proceed to Puzzle Button -->
+        <button class="proceed-btn" id="proceedToLevel5PuzzleBtn" style="display: none;">
+            <span>LEVEL 5 →</span>
+            <div class="btn-glow"></div>
+        </button>
+
+        <!-- Story Navigation Indicator -->
+        <div class="story-nav-indicator level-nav" id="level5NavIndicator">
+            <div class="nav-text">Press SPACE or click to continue...</div>
+            <div class="nav-dots">
+                <span class="dot active" data-dot="1"></span>
+                <span class="dot" data-dot="2"></span>
+                <span class="dot" data-dot="3"></span>
+                <span class="dot" data-dot="4"></span>
+                <span class="dot" data-dot="5"></span>
+            </div>
+        </div>
+
+        <!-- Skip Story Button -->
+        <button class="skip-story-btn" id="skipLevel5StoryBtn">
+            <span>↓ SKIP STORY</span>
+        </button>
+
+        <!-- Level 5 Puzzle: Blueprint Analysis -->
+        <div class="puzzle-container" id="level5Puzzle" style="display: none;">
+            <!-- Puzzle Background -->
+            <div class="puzzle-background level5-bg"></div>
+
+            <!-- Puzzle Title -->
+            <h2 class="puzzle-title">LOGIC BARRIER - DATA ANALYSIS</h2>
+            <p class="puzzle-subtitle">Digital Forensics Lab - Sector 12</p>
+
+            <!-- Blueprint Display Container -->
+            <div class="blueprint-container">
+                <div class="blueprint-frame">
+                    <div class="blueprint-screen">
+                        <img id="level5Image" src="assets/l5-img.png" alt="Hawkins Lab Blueprint" class="blueprint-image">
+                        <div class="glitch-overlay"></div>
+                        <div class="image-scanlines"></div>
+                    </div>
+                    <div class="blueprint-label">
+                        <span class="file-info">📄 FILE: hawkins_blueprint.png <span class="download-icon" id="downloadImageBtn" title="Download Image">⬇</span></span>
+                        <span class="file-status danger-text">⚠ SIGNATURE: UNSTABLE</span>
+                    </div>
+                </div>
+
+                <!-- Analysis Hint -->
+                <div class="analysis-hint">
+                    <p class="analysis-hint-text">💡 The machine doesn't see a picture...</p>
+                    <p class="analysis-hint-text">It sees a wall of text.</p>
+                    <div class="notepad-icon">📝</div>
+                </div>
+            </div>
+
+            <!-- Hint Section -->
+            <div class="hint-section">
+                <p class="hint-text">💡 "The truth is written in the margins of the machine. View the raw data."</p>
+            </div>
+
+            <!-- Unlock Button -->
+            <button class="next-level-btn" id="level5UnlockBtn">
+                <span>UNLOCK</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ========================================
+         LEVEL 6: The Signal in the Void
+         ======================================== -->
+    <div class="level-section" id="level6Section">
+        <!-- Background Spores -->
+        <div class="level-spores" id="level6Spores"></div>
+        <div class="vhs-overlay"></div>
+        <div class="chromatic-effect"></div>
+
+        <!-- Level 6 Story Slides -->
+        <div class="story-slides-container" id="level6StorySlides">
+            <!-- Slide 1: Setup -->
+            <div class="story-slide active" data-slide="1">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="LEVEL 6: THE SIGNAL IN THE VOID">LEVEL 6: THE SIGNAL IN THE VOID</h2>
+                    <div class="story-date">January 1, 2026 - 00:55:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">The DNA has been stabilized...</p>
+                        <p class="story-text fade-in-text delay-1">But the Lab walls are beginning to <span class="danger-text">dissolve</span>.</p>
+                        <p class="story-text fade-in-text delay-2">We've entered <span class="highlight-text">The Void</span>—the pitch-black psychic plane where distance and time have no meaning.</p>
+                        <p class="story-text fade-in-text delay-3">There are no doors here.</p>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 2: The Discovery -->
+            <div class="story-slide" data-slide="2">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="SPECTRAL SIGNAL DETECTED">SPECTRAL SIGNAL DETECTED</h2>
+                    <div class="story-date">January 1, 2026 - 00:56:30</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">To find our way out, we have to track a <span class="highlight-text">spectral signal</span>...</p>
+                        <p class="story-text fade-in-text delay-1">It was last seen near the <span class="highlight-text">Hawkins State Community Hall</span>.</p>
+                        <p class="story-text fade-in-text delay-2">But in the Void, all maps have been erased...</p>
+                        <div class="frequency-wave"></div>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 3: The Conflict -->
+            <div class="story-slide" data-slide="3">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story danger" data-text="⚠️ MAP SCRUBBED ⚠️">⚠️ MAP SCRUBBED ⚠️</h2>
+                    <div class="story-date">January 1, 2026 - 00:58:15</div>
+                    <div class="story-text-container red-alert">
+                        <p class="story-text fade-in-text">The <span class="danger-text">'Shadow Entity'</span> has tried to blind us.</p>
+                        <p class="story-text fade-in-text delay-1">It has scrubbed the map and replaced it with a <span class="danger-text">'Blank Canvas'</span> image.</p>
+                        <p class="story-text fade-in-text delay-2">But the coordinates are still there...</p>
+                        <p class="story-text fade-in-text delay-3">Etched into the <span class="highlight-text glitch-word">light of the file</span>.</p>
+                    </div>
+                    <div class="shadow-entity"></div>
+                    <div class="static-flash danger"></div>
+                </div>
+            </div>
+
+            <!-- Slide 4: The Challenge -->
+            <div class="story-slide" data-slide="4">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="FORENSIC LENS REQUIRED">FORENSIC LENS REQUIRED</h2>
+                    <div class="story-date">January 1, 2026 - 01:00:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text epic">You must use the Lab's <span class="highlight-text">'Forensic Lens'</span> to pull the numbers from the darkness.</p>
+                        <p class="story-text fade-in-text delay-1 epic">But be warned: <span class="danger-text">a coordinate is just a point on a map</span>.</p>
+                        <p class="story-text fade-in-text delay-2 epic">To find the key, you have to look at what the machine sees.</p>
+                    </div>
+                    <div class="security-grid"></div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 5: The Stakes -->
+            <div class="story-slide" data-slide="5">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story danger" data-text="THE COMMAND">THE COMMAND</h2>
+                    <div class="story-date">January 1, 2026 - 01:01:47</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text epic">The Shadow Entity wants us to go back...</p>
+                        <p class="story-text fade-in-text delay-1 epic">To return to the comfort of 2025.</p>
+                        <p class="story-text fade-in-text delay-2 danger-text epic large">It has left a message on the way of its road to the upside down.</p>
+                        <p class="story-text fade-in-text delay-3 highlight-text epic large">Find that command. It is the only thing that will keep us moving forward.</p>
+                    </div>
+                    <div class="static-flash danger"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proceed to Puzzle Button -->
+        <button class="proceed-btn" id="proceedToLevel6PuzzleBtn" style="display: none;">
+            <span>LEVEL 6 →</span>
+            <div class="btn-glow"></div>
+        </button>
+
+        <!-- Story Navigation Indicator -->
+        <div class="story-nav-indicator level-nav" id="level6NavIndicator">
+            <div class="nav-text">Press SPACE or click to continue...</div>
+            <div class="nav-dots">
+                <span class="dot active" data-dot="1"></span>
+                <span class="dot" data-dot="2"></span>
+                <span class="dot" data-dot="3"></span>
+                <span class="dot" data-dot="4"></span>
+                <span class="dot" data-dot="5"></span>
+            </div>
+        </div>
+
+        <!-- Skip Story Button -->
+        <button class="skip-story-btn" id="skipLevel6StoryBtn">
+            <span>↓ SKIP STORY</span>
+        </button>
+
+        <!-- Level 6 Puzzle: Void Navigation -->
+        <div class="puzzle-container" id="level6Puzzle" style="display: none;">
+            <!-- Puzzle Background -->
+            <div class="puzzle-background level6-bg"></div>
+
+            <!-- Puzzle Title -->
+            <h2 class="puzzle-title">THE VOID - NAVIGATION SECTOR</h2>
+            <p class="puzzle-subtitle">Psychic Coordinates - Unknown Location</p>
+
+            <!-- Two Column Layout -->
+            <div class="void-navigation-container">
+                <!-- Left Column: Encoded Map -->
+                <div class="void-left">
+                    <div class="map-frame">
+                        <div class="map-screen">
+                            <img id="level6Image" src="assets/hk-map-l6.png" alt="Void Map" class="void-map-image">
+                            <div class="void-glitch-overlay"></div>
+                            <div class="map-scanlines"></div>
+                            <div class="hidden-decode-trigger" id="decodeBtn" title="???">⚡</div>
+                        </div>
+                        <div class="map-label">
+                            <span class="map-file-info">📄 FILE: void_map_scrubbed.png <span class="download-icon" id="downloadMapBtn" title="Download Image">⬇</span></span>
+                            <span class="map-status danger-text">⚠ DATA: ENCRYPTED</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Radar Display -->
+                <div class="void-right">
+                    <div class="radar-container">
+                        <div class="radar-screen">
+                            <div class="radar-globe">
+                                <div class="globe-ring ring-1"></div>
+                                <div class="globe-ring ring-2"></div>
+                                <div class="globe-ring ring-3"></div>
+                                <div class="radar-sweep"></div>
+                                <div class="radar-blip blip-1"></div>
+                                <div class="radar-blip blip-2"></div>
+                                <div class="radar-center">◉</div>
+                            </div>
+                            <div class="radar-status">
+                                <div class="status-line">SEARCHING...</div>
+                                <div class="status-line">SIGNAL: <span class="danger-text">WEAK</span></div>
+                                <div class="status-line">COORDINATES: <span class="highlight-text">HIDDEN</span></div>
+                            </div>
+                        </div>
+                        <div class="radar-label">🛰️ PSYCHIC RADAR</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decoder Modal (Hidden) -->
+            <div class="decoder-modal" id="decoderModal" style="display: none;">
+                <div class="decoder-container">
+                    <div class="decoder-header">
+                        <span class="decoder-title">🔬 FORENSIC LENS ACTIVATED</span>
+                        <button class="decoder-close" id="decoderCloseBtn">✕</button>
+                    </div>
+                    <div class="decoder-body">
+                        <p class="decoder-text">The coordinates are <span class="highlight-text">hidden in the light</span> of the file.</p>
+                        <p class="decoder-text">Use the Lab's Steganography Decoder to extract the signal:</p>
+                        <div class="decoder-divider"></div>
+                        <a href="https://stylesuxx.github.io/steganography/" target="_blank" class="decoder-link">
+                            🔗 OPEN FORENSIC LENS
+                        </a>
+                        <div class="decoder-divider"></div>
+                        <p class="decoder-hint">💡 Download the image, decode it, find the coordinates...</p>
+                        <p class="decoder-hint danger-text">Look for the <span class="highlight-text">command </span>rules across the street</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hint Section -->
+            <div class="hint-section">
+                <p class="hint-text">💡 The Shadow Entity has left a message on its road to the Upside Down...</p>
+            </div>
+
+            <!-- Unlock Button -->
+            <button class="next-level-btn" id="level6UnlockBtn">
+                <span>UNLOCK</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ========================================
+         LEVEL 7: The Sensory Static
+         ======================================== -->
+    <div class="level-section" id="level7Section">
+        <!-- Background Spores -->
+        <div class="level-spores" id="level7Spores"></div>
+        <div class="vhs-overlay"></div>
+        <div class="chromatic-effect"></div>
+
+        <!-- Level 7 Story Slides -->
+        <div class="story-slides-container" id="level7StorySlides">
+            <!-- Slide 1: Setup -->
+            <div class="story-slide active" data-slide="1">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="LEVEL 7: THE SENSORY STATIC">LEVEL 7: THE SENSORY STATIC</h2>
+                    <div class="story-date">January 1, 2026 - 01:05:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">The Void has reached <span class="danger-text">absolute zero</span>.</p>
+                        <p class="story-text fade-in-text delay-1">Your screens have gone dark, and your instruments are dead.</p>
+                        <p class="story-text fade-in-text delay-2">In the silence of the Rift, the <span class="highlight-text">2026 Horizon</span> is no longer a destination...</p>
+                        <p class="story-text fade-in-text delay-3">It's a heartbeat.</p>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 2: The Discovery -->
+            <div class="story-slide" data-slide="2">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="THE FINAL HANDSHAKE">THE FINAL HANDSHAKE</h2>
+                    <div class="story-date">January 1, 2026 - 01:06:30</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">A single emergency bulb is struggling against the darkness...</p>
+                        <p class="story-text fade-in-text delay-1">The radio is bleeding a <span class="highlight-text">rhythmic interference</span>.</p>
+                        <p class="story-text fade-in-text delay-2">This is <span class="highlight-text">The Final Handshake</span>.</p>
+                        <div class="frequency-wave"></div>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 3: The Conflict -->
+            <div class="story-slide" data-slide="3">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story danger" data-text="⚠️ STATIC OF THE MIND ⚠️">⚠️ STATIC OF THE MIND ⚠️</h2>
+                    <div class="story-date">January 1, 2026 - 01:08:15</div>
+                    <div class="story-text-container red-alert">
+                        <p class="story-text fade-in-text">The <span class="danger-text">'Shadow Entity'</span> has masked the exit code within the <span class="danger-text">'Static of the Mind.'</span></p>
+                        <p class="story-text fade-in-text delay-1">Two different patterns are playing at the same time...</p>
+                        <p class="story-text fade-in-text delay-2">But they are not speaking to each other.</p>
+                        <p class="story-text fade-in-text delay-3">They are <span class="highlight-text glitch-word">two halves of a broken bridge</span>.</p>
+                    </div>
+                    <div class="shadow-entity"></div>
+                    <div class="static-flash danger"></div>
+                </div>
+            </div>
+
+            <!-- Slide 4: The Challenge -->
+            <div class="story-slide" data-slide="4">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="NO CHARTS. NO MANUALS.">NO CHARTS. NO MANUALS.</h2>
+                    <div class="story-date">January 1, 2026 - 01:10:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text epic">You have no charts, no manuals, and no instructions.</p>
+                        <p class="story-text fade-in-text delay-1 epic">You only have <span class="highlight-text">your eyes</span>, <span class="highlight-text">your ears</span>, and the collective focus of the Party.</p>
+                        <p class="story-text fade-in-text delay-2 epic">The machine is trying to tell you how to win...</p>
+                        <p class="story-text fade-in-text delay-3 epic">But it's stuttering in two different <span class="highlight-text">80s dialects</span>.</p>
+                    </div>
+                    <div class="security-grid"></div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 5: The Stakes -->
+            <div class="story-slide" data-slide="5">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story danger" data-text="PROVE YOU BELONG">PROVE YOU BELONG</h2>
+                    <div class="story-date">January 1, 2026 - 01:11:47</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text epic">One is in the light; one is in the noise.</p>
+                        <p class="story-text fade-in-text delay-1 epic">If you can't isolate the signals and find the <span class="highlight-text">two words</span> that define our fate...</p>
+                        <p class="story-text fade-in-text delay-2 danger-text epic large">The 2026 Horizon will remain a ghost.</p>
+                        <p class="story-text fade-in-text delay-3 highlight-text epic large">This is the end of the line. Prove you belong in the future.</p>
+                    </div>
+                    <div class="static-flash danger"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proceed to Puzzle Button -->
+        <button class="proceed-btn" id="proceedToLevel7PuzzleBtn" style="display: none;">
+            <span>LEVEL 7 →</span>
+            <div class="btn-glow"></div>
+        </button>
+
+        <!-- Story Navigation Indicator -->
+        <div class="story-nav-indicator level-nav" id="level7NavIndicator">
+            <div class="nav-text">Press SPACE or click to continue...</div>
+            <div class="nav-dots">
+                <span class="dot active" data-dot="1"></span>
+                <span class="dot" data-dot="2"></span>
+                <span class="dot" data-dot="3"></span>
+                <span class="dot" data-dot="4"></span>
+                <span class="dot" data-dot="5"></span>
+            </div>
+        </div>
+
+        <!-- Skip Story Button -->
+        <button class="skip-story-btn" id="skipLevel7StoryBtn">
+            <span>↓ SKIP STORY</span>
+        </button>
+
+        <!-- Level 7 Puzzle: Binary & Morse -->
+        <div class="puzzle-container" id="level7Puzzle" style="display: none;">
+            <!-- Puzzle Background -->
+            <div class="puzzle-background level7-bg"></div>
+
+            <!-- Puzzle Title -->
+            <h2 class="puzzle-title">THE FINAL HANDSHAKE</h2>
+            <p class="puzzle-subtitle">Emergency Protocol - Sector Zero</p>
+
+            <!-- Emergency Station Container -->
+            <div class="emergency-station">
+                <!-- Lightbulb Section -->
+                <div class="lightbulb-section">
+                    <div class="emergency-frame">
+                        <div class="bulb-container">
+                            <div class="binary-bulbs" id="binaryBulbs">
+                                <div class="bulb-item" data-bit="0">
+                                    <div class="bulb-mini" id="bulb0">💡</div>
+                                    <span class="bit-label">7</span>
+                                </div>
+                                <div class="bulb-item" data-bit="1">
+                                    <div class="bulb-mini" id="bulb1">💡</div>
+                                    <span class="bit-label">6</span>
+                                </div>
+                                <div class="bulb-item" data-bit="2">
+                                    <div class="bulb-mini" id="bulb2">💡</div>
+                                    <span class="bit-label">5</span>
+                                </div>
+                                <div class="bulb-item" data-bit="3">
+                                    <div class="bulb-mini" id="bulb3">💡</div>
+                                    <span class="bit-label">4</span>
+                                </div>
+                                <div class="bulb-item" data-bit="4">
+                                    <div class="bulb-mini" id="bulb4">💡</div>
+                                    <span class="bit-label">3</span>
+                                </div>
+                                <div class="bulb-item" data-bit="5">
+                                    <div class="bulb-mini" id="bulb5">💡</div>
+                                    <span class="bit-label">2</span>
+                                </div>
+                                <div class="bulb-item" data-bit="6">
+                                    <div class="bulb-mini" id="bulb6">💡</div>
+                                    <span class="bit-label">1</span>
+                                </div>
+                                <div class="bulb-item" data-bit="7">
+                                    <div class="bulb-mini" id="bulb7">💡</div>
+                                    <span class="bit-label">0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bulb-label">
+                            <span class="bulb-status">⚡ 8-BIT EMERGENCY PROTOCOL</span>
+                            <div class="lab-sticker">Property of Hawkins Lab - Binary Transmission</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radio Section -->
+                <div class="radio-section">
+                    <div class="radio-frame">
+                        <div class="radio-display">
+                            <div class="radio-icon">📻</div>
+                            <h3 class="radio-title">ANALOG TRANSMISSION</h3>
+                            <p class="radio-desc">Static Frequency Detected</p>
+                            <audio id="level7Audio" loop>
+                                <source src="assets/mcode.wav" type="audio/wav">
+                                Your browser does not support the audio tag.
+                            </audio>
+                            <div class="audio-visualizer">
+                                <span class="vis-bar"></span>
+                                <span class="vis-bar"></span>
+                                <span class="vis-bar"></span>
+                                <span class="vis-bar"></span>
+                                <span class="vis-bar"></span>
+                            </div>
+                        </div>
+                        <div class="radio-controls">
+                            <button class="radio-btn" id="playRadioBtn">▶ PLAY</button>
+                            <button class="radio-btn" id="pauseRadioBtn">⏸ PAUSE</button>
+                            <span class="play-count" id="playCount">Loops: 0/3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dustin's Note (Hidden Hint Trigger) -->
+            <div class="dustin-note" id="dustinNote">
+                <div class="note-corner">📎</div>
+                <div class="note-content">
+                    <div class="note-header">From: Dustin's Emergency Kit</div>
+                    <div class="note-body">
+                        <div class="note-symbols">
+                            <span class="symbol-group">[ . / - ]</span>
+                            <span class="symbol-divider">|</span>
+                            <span class="symbol-group">[ 0 / 1 ]</span>
+                        </div>
+                        <div class="note-burn"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decoder Modal (Hidden) -->
+            <div class="decoder-modal" id="level7DecoderModal" style="display: none;">
+                <div class="decoder-container">
+                    <div class="decoder-header">
+                        <span class="decoder-title">🔬 PROTOCOL DECODER</span>
+                        <button class="decoder-close" id="level7DecoderCloseBtn">✕</button>
+                    </div>
+                    <div class="decoder-body">
+                        <p class="decoder-text">Two signals. Two languages. One solution.</p>
+                        <div class="decoder-divider"></div>
+                        <p class="decoder-hint">💡 <span class="highlight-text">The Light</span> speaks in pulses, try to find the meaning of it</p>
+                        <div class="decoder-divider"></div>
+                        <p class="decoder-hint">💡 <span class="highlight-text">The Noise</span> speaks in rhythm, try to find the pattern</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hint Section -->
+            <div class="hint-section">
+                <p class="hint-text">💡 One signal in the light. One signal in the noise. Both speak the truth.</p>
+            </div>
+
+            <!-- Unlock Button -->
+            <button class="next-level-btn" id="level7UnlockBtn">
+                <span>UNLOCK</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ========================================
+         LEVEL 8: THE GATEKEEPER'S GAMBIT
+    ========================================= -->
+    <div class="level-section" id="level8Section" style="display: none;">
+        <!-- Background Effects -->
+        <div class="level-spores" id="level8Spores"></div>
+        <div class="vhs-overlay"></div>
+        <div class="chromatic-effect"></div>
+
+        <!-- Level 8 Story Slides -->
+        <div class="story-slides-container" id="level8StorySlides">
+            <!-- Slide 1 -->
+            <div class="story-slide active" data-slide="1">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="LEVEL 8: THE GATEKEEPER'S GAMBIT">LEVEL 8: THE GATEKEEPER'S GAMBIT</h2>
+                    <div class="story-date">January 1, 2026 - 01:10:00</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">The transmission is complete.</p>
+                        <p class="story-text fade-in-text delay-1">The words <span class="highlight-text danger-text">"CRITICAL SITUATION"</span> echo through the lab,</p>
+                        <p class="story-text fade-in-text delay-2">triggering the final emergency protocols.</p>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="story-slide" data-slide="2">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="THE THRESHOLD OF THE RIFT">THE THRESHOLD OF THE RIFT</h2>
+                    <div class="story-date">January 1, 2026 - 01:11:30</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">The walls of reality have finally shredded away.</p>
+                        <p class="story-text fade-in-text delay-1">We are no longer in the lab.</p>
+                        <p class="story-text fade-in-text delay-2">We are standing at the <span class="highlight-text">Threshold of the Rift</span>—</p>
+                        <p class="story-text fade-in-text delay-3">the thin, bleeding edge between our world and the <span class="future-text">2026 Horizon</span>.</p>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="story-slide" data-slide="3">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story danger" data-text="⚠️ THE GATEKEEPER ⚠️">⚠️ THE GATEKEEPER ⚠️</h2>
+                    <div class="story-date">January 1, 2026 - 01:13:00</div>
+                    <div class="story-text-container red-alert">
+                        <p class="story-text fade-in-text">But the path is not empty.</p>
+                        <p class="story-text fade-in-text delay-1">The Shadow Entity has materialized into its final form:</p>
+                        <p class="story-text fade-in-text delay-2"><span class="danger-text">THE GATEKEEPER</span></p>
+                    </div>
+                    <div class="shadow-entity"></div>
+                    <div class="static-flash danger"></div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="story-slide" data-slide="4">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="THE POLYHEDRAL BONE">THE POLYHEDRAL BONE</h2>
+                    <div class="story-date">January 1, 2026 - 01:14:15</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">It doesn't care about your logic, your binary codes, or your coordinates.</p>
+                        <p class="story-text fade-in-text delay-1">It only understands the raw, chaotic power of the <span class="highlight-text">Polyhedral Bone</span>.</p>
+                        <p class="story-text fade-in-text delay-2">To pass through the gate, you must prove that destiny is on your side.</p>
+                        <p class="story-text fade-in-text delay-3"><span class="danger-text">You have three chances to strike.</span></p>
+                    </div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="story-slide" data-slide="5">
+                <div class="story-content">
+                    <div class="vhs-lines"></div>
+                    <h2 class="story-title glitch-story" data-text="ROLL FOR YOUR LIVES">ROLL FOR YOUR LIVES</h2>
+                    <div class="story-date">January 1, 2026 - 01:15:45</div>
+                    <div class="story-text-container">
+                        <p class="story-text fade-in-text">Champions of the Party, step forward.</p>
+                        <p class="story-text fade-in-text delay-1">The Gatekeeper's shield is at <span class="highlight-text danger-text">42 HP</span>.</p>
+                        <p class="story-text fade-in-text delay-2">Every roll of the D20 is a direct strike against the dark.</p>
+                        <p class="story-text fade-in-text delay-3">If the dice fall short, the <span class="danger-text">Archives</span> will open,</p>
+                        <p class="story-text fade-in-text delay-4">and only your deepest understanding of this world can save us.</p>
+                        <p class="story-text fade-in-text delay-5"><span class="future-text">Roll for the future. Roll for the Horizon. Roll for your lives!</span></p>
+                    </div>
+                    <div class="frequency-wave"></div>
+                    <div class="static-flash"></div>
+                </div>
+            </div>
+
+            <!-- Proceed Button -->
+            <button class="proceed-btn" id="proceedToLevel8PuzzleBtn" style="display: none;">
+                <span>⚔️ FACE THE GATEKEEPER ⚔️</span>
+                <div class="btn-glow"></div>
+            </button>
+
+            <!-- Story Navigation Indicator -->
+            <div class="story-nav-indicator level-nav" id="level8NavIndicator">
+                <div class="nav-text">Press SPACE or click to continue...</div>
+                <div class="nav-dots">
+                    <span class="dot active" data-dot="1"></span>
+                    <span class="dot" data-dot="2"></span>
+                    <span class="dot" data-dot="3"></span>
+                    <span class="dot" data-dot="4"></span>
+                    <span class="dot" data-dot="5"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skip Story Button -->
+        <button class="skip-story-btn" id="skipLevel8StoryBtn">
+            <span>↓ SKIP STORY</span>
+        </button>
+
+        <!-- Level 8 Puzzle: D20 Dice -->
+        <div class="puzzle-container" id="level8Puzzle" style="display: none;">
+            <!-- Puzzle Background -->
+            <div class="puzzle-background level8-bg"></div>
+
+            <!-- Puzzle Title -->
+            <h2 class="puzzle-title gatekeeper-title">THE THRESHOLD OF THE RIFT</h2>
+            <p class="puzzle-subtitle gatekeeper-subtitle">⚔️ Strike the Gatekeeper ⚔️</p>
+
+            <!-- Gatekeeper Health Bar -->
+            <div class="gatekeeper-health-container">
+                <div class="health-label">GATEKEEPER INTEGRITY</div>
+                <div class="health-bar-outer">
+                    <div class="health-bar-inner" id="gatekeeperHealth">
+                        <span class="health-text" id="healthText">42 / 42 HP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- D20 Dice Container -->
+            <div class="dice-arena">
+                <div class="d20-container">
+                    <div class="d20-dice" id="d20Dice">
+                        <div class="dice-face">20</div>
+                    </div>
+                    <div class="dice-glow"></div>
+                </div>
+                
+                <!-- Roll Button -->
+                <button class="roll-btn" id="rollDiceBtn">
+                    <span class="roll-icon">⚔️</span>
+                    <span class="roll-text">ROLL THE D20</span>
+                </button>
+                
+                <!-- Roll Info -->
+                <div class="roll-info">
+                    <div class="roll-count" id="rollCount">Rolls: 0 / 3</div>
+                    <div class="roll-total" id="rollTotal">Total Damage: 0</div>
+                </div>
+                
+                <!-- Roll History -->
+                <div class="roll-history" id="rollHistory"></div>
+            </div>
+
+            <!-- Trivia Modal (The Archives) -->
+            <div class="trivia-modal" id="triviaModal" style="display: none;">
+                <div class="trivia-container">
+                    <div class="trivia-header">
+                        <h3 class="trivia-title">📚 THE ARCHIVES 📚</h3>
+                        <p class="trivia-subtitle">The Gatekeeper is testing your connection to our world. Answer these relics from the past to earn your strength for the future.</p>
+                        <div class="trivia-timer" id="triviaTimer">15</div>
+                    </div>
+                    <div class="trivia-body">
+                        <p class="trivia-question" id="triviaQuestion"></p>
+                        <div class="trivia-options" id="triviaOptions"></div>
+                    </div>
+                    <div class="trivia-feedback" id="triviaFeedback" style="display: none;"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 42-Second Synchronization Story -->
+    <div class="sync-story-container" id="syncStoryContainer" style="display: none;">
+        <div class="story-content">
+            <div class="vhs-lines"></div>
+            <h2 class="story-title glitch-story" data-text="THE MANUAL OVERRIDE">THE MANUAL OVERRIDE</h2>
+            <div class="story-date">January 1, 2026 - 01:15:00</div>
+            <div class="story-text-container">
+                <p class="story-text fade-in-text">The Beast is dead.</p>
+                <p class="story-text fade-in-text delay-1">But as the Entity dissolved, it triggered a <span class="danger-text">Dead-Man's Switch</span>.</p>
+                <p class="story-text fade-in-text delay-2">The Gate to 2026 is closing, and the digital controls are fried.</p>
+                <p class="story-text fade-in-text delay-3">The only way to keep the portal open is through a <span class="highlight-text">manual psychic bridge</span>.</p>
+                <p class="story-text fade-in-text delay-4">We need the collective <span class="future-text">'Heartbeat'</span> of the Party to be perfectly in sync.</p>
+                <p class="story-text fade-in-text delay-5 danger-text">Close the Gate at exactly the 42nd second.</p>
+            </div>
+            <div class="static-flash"></div>
+        </div>
+        <button class="proceed-btn" id="proceedToCountdownBtn" style="display: none;">
+            <span>⏱️ BEGIN SYNCHRONIZATION</span>
+        </button>
+    </div>
+
+    <!-- Countdown Screen -->
+    <div class="countdown-screen" id="countdownScreen" style="display: none;">
+        <div class="countdown-content">
+            <h2 class="countdown-title">THE COUNTING BEGINS</h2>
+            <div class="countdown-number" id="countdownNumber">3</div>
+        </div>
+    </div>
+
+    <!-- Gate Closing Challenge -->
+    <div class="gate-challenge-container" id="gateChallengeContainer" style="display: none;">
+        <!-- Background will be assets/vna.png -->
+        <div class="gate-challenge-bg"></div>
+        
+        <!-- Grandfather Clock -->
+        <div class="grandfather-clock">
+            <div class="clock-body">
+                <div class="clock-face">
+                    <div class="clock-hour-hand" id="clockHourHand"></div>
+                    <div class="clock-minute-hand" id="clockMinuteHand"></div>
+                    <div class="clock-second-hand" id="clockSecondHand"></div>
+                    <div class="clock-center-dot"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Close Gate Button -->
+        <button class="close-gate-btn" id="closeGateBtn">
+            <span class="gate-icon">🚪</span>
+            <span class="gate-text">CLOSE THE GATE</span>
+        </button>
+    </div>
+
+    <!-- Sync Trivia Modal (2 Questions) -->
+    <div class="sync-trivia-modal" id="syncTriviaModal" style="display: none;">
+        <div class="trivia-container">
+            <div class="trivia-header">
+                <h3 class="trivia-title">⚡ THE GATE DESTABILIZED ⚡</h3>
+                <p class="trivia-subtitle">Answer these questions to attempt the synchronization again!</p>
+                <div class="trivia-timer" id="syncTriviaTimer">15</div>
+            </div>
+            <div class="trivia-body">
+                <p class="trivia-question" id="syncTriviaQuestion"></p>
+                <div class="trivia-options" id="syncTriviaOptions"></div>
+            </div>
+            <div class="trivia-feedback" id="syncTriviaFeedback" style="display: none;"></div>
+        </div>
+    </div>
+
+    <!-- Victory Screen -->
+    <div class="victory-screen" id="victoryScreen" style="display: none;">
+        <div class="victory-content">
+            <h1 class="victory-title">⚔️ CRITICAL HIT! ⚔️</h1>
+            <p class="victory-text">The Gatekeeper dissolves into ash.</p>
+            <p class="victory-text">The Rift is stable.</p>
+            <p class="victory-text">The <span class="future-text">2026 Horizon</span> is no longer a dream—</p>
+            <p class="victory-text future-text">it is our reality.</p>
+            <p class="victory-text">The Party has survived the Lab, the Void, and the Beast.</p>
+            <h2 class="victory-final">Step through the gate... the future is ours!</h2>
+            <div class="horizon-glow"></div>
+        </div>
+    </div>
+
+    <!-- Password Terminal Modal -->
+    <div class="terminal-modal" id="terminalModal" style="display: none !important; visibility: hidden;">
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <span class="terminal-title">HAWKINS LAB SECURITY TERMINAL</span>
+                <button class="terminal-close" id="terminalCloseBtn">✕</button>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="terminal-prompt">&gt;</span>
+                    <span class="terminal-text">Initializing Hawkins Lab Access Protocol...</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-prompt">&gt;</span>
+                    <span class="terminal-text">Security Layer 1: ACTIVE</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-prompt">&gt;</span>
+                    <span class="terminal-text">Enter the Frequency of Welcome:</span>
+                </div>
+                <div class="terminal-input-line">
+                    <span class="terminal-prompt">&gt;</span>
+                    <input type="text" class="terminal-input" id="passwordInput" placeholder="TYPE PASSWORD..." autocomplete="off" maxlength="20">
+                </div>
+                <div class="terminal-error" id="terminalError" style="display: none;">
+                    <span class="error-text">❌ ACCESS DENIED - INVALID FREQUENCY</span>
+                </div>
+                <div class="terminal-success" id="terminalSuccess" style="display: none;">
+                    <span class="success-text">✅ ACCESS GRANTED - THRESHOLD BREACHED</span>
+                </div>
+            </div>
+            <div class="terminal-footer">
+                <button class="terminal-submit" id="terminalSubmitBtn">SUBMIT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Ambience (Optional) -->
+    <audio id="ambientSound" loop>
+        <!-- Add your ambient sound here if you have one -->
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
