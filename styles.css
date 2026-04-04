@@ -1552,6 +1552,24 @@ body {
     animation: hintPulse 3s infinite;
 }
 
+.hint-bulb-btn {
+    background: none;
+    border: none;
+    padding: 0 6px 0 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.8);
+    transition: transform 0.2s ease, text-shadow 0.2s ease;
+}
+
+.hint-bulb-btn:hover,
+.hint-bulb-btn:focus-visible {
+    transform: scale(1.15);
+    text-shadow: 0 0 18px rgba(255, 230, 120, 1);
+    outline: none;
+}
+
 @keyframes hintPulse {
     0%, 100% { opacity: 0.7; }
     50% { opacity: 1; }
@@ -2369,10 +2387,11 @@ body {
 
 /* Sound Lab Container */
 .sound-lab-container {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 40px auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
     gap: 30px;
     padding: 20px;
     position: relative;
@@ -2383,6 +2402,8 @@ body {
 .sound-lab-left {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 720px;
 }
 
 .audio-workstation {
@@ -2577,6 +2598,85 @@ body {
 @keyframes pulse {
     0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
     100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+
+/* Scanner Modal */
+.scanner-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 25000;
+}
+
+.scanner-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+}
+
+.scanner-modal-content {
+    position: relative;
+    max-width: 700px;
+    width: 90%;
+    max-height: 80vh;
+    background: #0a0a0a;
+    border: 3px solid #ff0066;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 50px rgba(255, 0, 102, 0.4);
+    overflow-y: auto;
+    z-index: 25001;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+.scanner-riddle-content {
+    margin-top: 22px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 0, 102, 0.4);
+    text-align: center;
+}
+
+.scanner-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #ff0066;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 25002;
+}
+
+.scanner-modal-close:hover {
+    color: #ff3366;
+    transform: scale(1.2);
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Riddle Modal */
