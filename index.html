@@ -912,8 +912,13 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Scanner -->
-                <div class="sound-lab-right">
+            </div>
+
+            <!-- Scanner Clue Modal (Hidden by default) -->
+            <div class="scanner-modal" id="scannerModal" style="display: none;">
+                <div class="scanner-modal-overlay" id="scannerModalOverlay"></div>
+                <div class="scanner-modal-content">
+                    <button class="scanner-modal-close" id="scannerModalCloseBtn">✕</button>
                     <div class="scanner-panel">
                         <div class="scanner-screen">
                             <div class="scanner-icon">🔬</div>
@@ -925,17 +930,8 @@
                             <div class="btn-pulse"></div>
                         </button>
                     </div>
-                </div>
-            </div>
 
-            <!-- Riddle Modal (Hidden by default) -->
-            <div class="riddle-modal" id="riddleModal" style="display: none;">
-                <div class="riddle-container">
-                    <div class="riddle-header">
-                        <span class="riddle-title">🔮 PSYCHIC TRANSMISSION</span>
-                        <button class="riddle-close" id="riddleCloseBtn">✕</button>
-                    </div>
-                    <div class="riddle-body">
+                    <div class="scanner-riddle-content" id="scannerRiddleContent" style="display: none;">
                         <p class="riddle-text">The ears are being <span class="danger-text">lied</span> to.</p>
                         <p class="riddle-text">Trust only what the <span class="highlight-text">Spectrum</span> reveals.</p>
                         <div class="riddle-divider"></div>
@@ -950,7 +946,7 @@
 
             <!-- Hint Section -->
             <div class="hint-section">
-                <p class="hint-text">💡 Sound has a shape. What image is hidden in the waveform?</p>
+                <p class="hint-text"><button class="hint-bulb-btn" id="hintBulbBtn" type="button" aria-label="Open visual frequency scanner">💡</button> Sound has a shape. See the Sound not hear it</p>
             </div>
 
             <!-- Unlock Button -->
