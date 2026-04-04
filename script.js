@@ -13,12 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setup fullscreen toggle
     setupFullscreenToggle();
     
-    // Setup video handlers
-    setupVideoHandlers();
-    
-    // Setup journey button
-    setupJourneyButton();
-    
     // Add eerie sound effects (optional)
     setupAudio();
     
@@ -125,9 +119,9 @@ function setupButtonHandler() {
         // Play sound effect if available
         playClickSound();
         
-        // Transition to video section after animation
+        // Transition to story section after animation
         setTimeout(() => {
-            showVideoSection();
+            showStorySection();
         }, 500);
     });
     
@@ -135,22 +129,6 @@ function setupButtonHandler() {
     beginBtn.addEventListener('mouseenter', function() {
         playHoverSound();
     });
-}
-
-// Show video section
-function showVideoSection() {
-    const landingContainer = document.querySelector('.landing-container');
-    const videoSection = document.getElementById('videoSection');
-    const introVideo = document.getElementById('introVideo');
-    
-    // Hide landing page
-    landingContainer.style.display = 'none';
-    
-    // Show video section
-    videoSection.classList.add('active');
-    
-    // Play video
-    introVideo.play().catch(e => console.log('Video autoplay prevented:', e));
 }
 
 // Setup fullscreen toggle
@@ -181,103 +159,28 @@ function setupFullscreenToggle() {
     });
 }
 
-// Setup video handlers
-function setupVideoHandlers() {
-    const introVideo = document.getElementById('introVideo');
-    const skipVideoBtn = document.getElementById('skipVideoBtn');
-    
-    // When video ends, show post-video screen
-    introVideo.addEventListener('ended', function() {
-        showPostVideoSection();
-    });
-    
-    // Skip button
-    skipVideoBtn.addEventListener('click', function() {
-        showPostVideoSection();
-    });
-}
-
-// Show post-video section
-function showPostVideoSection() {
-    const videoSection = document.getElementById('videoSection');
-    const postVideoSection = document.getElementById('postVideoSection');
-    const introVideo = document.getElementById('introVideo');
-    
-    // Pause and hide video
-    introVideo.pause();
-    videoSection.classList.remove('active');
-    
-    // Create fade transition
-    setTimeout(() => {
-        videoSection.style.display = 'none';
-        postVideoSection.classList.add('active');
-        
-        // Create particles for post-video screen
-        createPostVideoParticles();
-    }, 500);
-}
-
-// Create particles for post-video screen
-function createPostVideoParticles() {
-    const container = document.getElementById('postVideoParticles');
-    const particleCount = 40;
-    
-    for (let i = 0; i < particleCount; i++) {
-        createParticle(container, i);
-    }
-}
-
-// Setup journey button
-function setupJourneyButton() {
-    const journeyBtn = document.getElementById('journeyBtn');
-    
-    journeyBtn.addEventListener('click', function() {
-        // Add click effect
-        this.style.transform = 'scale(0.95)';
-        
-        // Create screen flash effect
-        createFlashEffect();
-        
-        // Play sound effect if available
-        playClickSound();
-        
-        // Transition to story section after animation
-        setTimeout(() => {
-            showStorySection();
-        }, 500);
-    });
-    
-    // Hover sound effect
-    journeyBtn.addEventListener('mouseenter', function() {
-        playHoverSound();
-    });
-}
-
 // Show story section
 let currentSlide = 1;
 const totalSlides = 5;
 
 function showStorySection() {
-    const postVideoSection = document.getElementById('postVideoSection');
+    const landingContainer = document.querySelector('.landing-container');
     const storySection = document.getElementById('storySection');
     
-    // Hide post-video section
-    postVideoSection.classList.remove('active');
+    // Hide landing page
+    landingContainer.style.display = 'none';
     
     // Show story section
-    setTimeout(() => {
-        postVideoSection.style.display = 'none';
-        storySection.classList.add('active');
-        
-        // Create spores for story section
-        createStorySpores();
-        
-        // Setup story navigation
-        setupStoryNavigation();
-        
-        // Play walkie-talkie sound (optional)
-        playWalkieTalkieSound();
-    }, 500);
+    storySection.classList.add('active');
+    
+    // Create spores for story section
+    createStorySpores();
+    
+    // Setup story navigation
+    setupStoryNavigation();
+    
+    // Play walkie-talkie sound (optional)
+    playWalkieTalkieSound();
 }
 
 // Create spores for story section
@@ -599,14 +502,12 @@ function setupLevel1Puzzle() {
     });
 }
 
-// Bulb flicker animation for AWAKE - sequential A K E A W
-const answerSequence = ['A', 'W', 'A', 'K', 'E'];
-const flickerSequence = ['A', 'K', 'E', 'A', 'W']; // Sequential order
+const answerSequence = ['W', 'A', 'K', 'E', 'U', 'P'];
+const flickerSequence = ['K','W', 'A', 'E', 'P', 'U'];
 let flickerInterval;
 let currentFlickerIndex = 0;
 
 function startBulbFlicker() {
-    // Flicker AWAKE letters in sequence: A K E A W
     function flickerNextLetter() {
         // Get the next letter in sequence
         const letter = flickerSequence[currentFlickerIndex];
@@ -693,9 +594,10 @@ function setupTerminalControls() {
     };
 }
 
-function checkPassword() {
+// Server-side password validation via Netlify Function
+async function checkPassword() {
     const input = document.getElementById('passwordInput');
-    const password = input.value.trim().toUpperCase();
+    const password = input.value.trim();
     const errorDiv = document.getElementById('terminalError');
     const successDiv = document.getElementById('terminalSuccess');
     const currentLevel = document.querySelector('.level-section.active') ? 
@@ -704,155 +606,71 @@ function checkPassword() {
     errorDiv.style.display = 'none';
     successDiv.style.display = 'none';
     
-    // Level 1 password check
-    if (currentLevel === 'level1Section' && password === 'AWAKE') {
-        // Correct password
-        successDiv.style.display = 'block';
-        playClickSound();
+    // Extract level number from section ID
+    const levelMatch = currentLevel.match(/level(\d)/);
+    const levelNumber = levelMatch ? parseInt(levelMatch[1]) : 1;
+    
+    try {
+        // Call Netlify Function for server-side validation
+        const response = await fetch('/.netlify/functions/validate-password', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ password, level: levelNumber })
+        });
         
-        setTimeout(() => {
-            closeTerminalModal();
-            createFlashEffect();
-            
-            // Navigate to Level 2
-            setTimeout(() => {
-                showLevel2();
-            }, 500);
-        }, 2000);
-    }
-    // Level 2 password check
-    else if (currentLevel === 'level2Section' && password === 'NEVERENDINGSTORY') {
-        // Correct password
-        successDiv.style.display = 'block';
-        playClickSound();
+        const data = await response.json();
         
-        setTimeout(() => {
-            closeTerminalModal();
-            createFlashEffect();
+        if (data.isCorrect) {
+            // Correct password
+            successDiv.style.display = 'block';
+            playClickSound();
             
-            // Navigate to Level 3
             setTimeout(() => {
-                showLevel3();
-            }, 500);
-        }, 2000);
-    }
-    // Level 3 password check
-    else if (currentLevel === 'level3Section' && password === '011') {
-        // Correct password
-        successDiv.style.display = 'block';
-        playClickSound();
-        
-        setTimeout(() => {
-            closeTerminalModal();
-            createFlashEffect();
+                closeTerminalModal();
+                createFlashEffect();
+                
+                // Navigate to next level
+                setTimeout(() => {
+                    if (levelNumber === 1) showLevel2();
+                    else if (levelNumber === 2) showLevel3();
+                    else if (levelNumber === 3) showLevel4();
+                    else if (levelNumber === 4) showLevel5();
+                    else if (levelNumber === 5) showLevel6();
+                    else if (levelNumber === 6) showLevel7();
+                    else if (levelNumber === 7) showLevel8();
+                }, 500);
+            }, 2000);
+        } else {
+            // Wrong password
+            errorDiv.style.display = 'block';
+            input.value = '';
+            input.focus();
             
-            // Navigate to Level 4
-            setTimeout(() => {
-                showLevel4();
-            }, 500);
-        }, 2000);
-    }
-    // Level 4 password check
-    else if (currentLevel === 'level4Section' && password === 'E') {
-        // Correct password
-        successDiv.style.display = 'block';
-        playClickSound();
-        
-        setTimeout(() => {
-            closeTerminalModal();
-            createFlashEffect();
+            // Level-specific hints
+            const hints = {
+                2: '<span class="error-text">❌ INVALID FREQUENCY<br>💡 Hint: The melody keeps its secret when time runs forward. Listen from the other side.<br>🔗 Tool: <a href="https://audioalter.com/" target="_blank" style="color: #00ff00;">audioalter.com</a></span>',
+                3: '<span class="error-text">❌ INVALID BYPASS CODE<br>💡 Hint: Watch the CCTV footage carefully... The code appears in the glitch</span>',
+                4: '<span class="error-text">❌ INVALID SPECTRAL KEY<br>💡 Hint: Convert the audio to spectrogram image... What Sentence do you see?</span>',
+                5: '<span class="error-text">❌ INVALID STABILIZING CODE<br>💡 Hint: Check the internal data of the Image... The truth is in the raw data</span>',
+                6: '<span class="error-text">❌ INVALID VOID COMMAND<br>💡 Hint: Decode the image, explore the bytes. The Shadow Entity has left co-ordinates</span>',
+                7: '<span class="error-text">❌ INVALID HANDSHAKE CODE<br>💡 Hint: Two signals. Light flickers (count them). Radio speaks in rhythm. Combine the two words.</span>'
+            };
             
-            // Navigate to Level 5
-            setTimeout(() => {
-                showLevel5();
-            }, 500);
-        }, 2000);
-    }
-    // Level 5 password check
-    else if (currentLevel === 'level5Section' && password === 'STABILIZE') {
-        // Correct password
-        successDiv.style.display = 'block';
-        playClickSound();
-        
-        setTimeout(() => {
-            closeTerminalModal();
-            createFlashEffect();
+            errorDiv.innerHTML = hints[levelNumber] || '<span class="error-text">❌ INVALID PASSWORD</span>';
             
-            // Navigate to Level 6
+            // Shake animation
+            const terminalContainer = document.querySelector('.terminal-container');
+            terminalContainer.style.animation = 'shake 0.5s';
             setTimeout(() => {
-                showLevel6();
+                terminalContainer.style.animation = '';
             }, 500);
-        }, 2000);
-    }
-    // Level 6 password check
-    else if (currentLevel === 'level6Section' && (password === 'NOUTURN' || password === 'NO U TURN')) {
-        // Correct password
-        successDiv.style.display = 'block';
-        playClickSound();
-        
-        setTimeout(() => {
-            closeTerminalModal();
-            createFlashEffect();
-            
-            // Navigate to Level 7
-            setTimeout(() => {
-                showLevel7();
-            }, 500);
-        }, 2000);
-    }
-    // Level 7 password check
-    else if (currentLevel === 'level7Section' && password === 'CRITICALSITUATION') {
-        // Correct password
-        successDiv.style.display = 'block';
-        playClickSound();
-        
-        setTimeout(() => {
-            closeTerminalModal();
-            createFlashEffect();
-            
-            // Navigate to Level 8
-            setTimeout(() => {
-                showLevel8();
-            }, 500);
-        }, 2000);
-    }
-    else {
-        // Wrong password
+        }
+    } catch (error) {
+        // Fallback: network error or function unavailable
+        console.error('Validation error:', error);
         errorDiv.style.display = 'block';
-        input.value = '';
+        errorDiv.innerHTML = '<span class="error-text">❌ SYSTEM ERROR<br>Connection lost. Try again.</span>';
         input.focus();
-        
-        // Level 2 specific hint
-        if (currentLevel === 'level2Section') {
-            errorDiv.innerHTML = '<span class="error-text">❌ INVALID FREQUENCY<br>💡 Hint: Reverse the song to find the Core Rhythm<br>🔗 Tool: <a href="https://audioalter.com/" target="_blank" style="color: #00ff00;">audioalter.com</a></span>';
-        }
-        // Level 3 specific hint
-        else if (currentLevel === 'level3Section') {
-            errorDiv.innerHTML = '<span class="error-text">❌ INVALID BYPASS CODE<br>💡 Hint: Watch the CCTV footage carefully... The code appears in the glitch</span>';
-        }
-        // Level 4 specific hint
-        else if (currentLevel === 'level4Section') {
-            errorDiv.innerHTML = '<span class="error-text">❌ INVALID SPECTRAL KEY<br>💡 Hint: Convert the audio to spectrogram image... What Sentence do you see?</span>';
-        }
-        // Level 5 specific hint
-        else if (currentLevel === 'level5Section') {
-            errorDiv.innerHTML = '<span class="error-text">❌ INVALID STABILIZING CODE<br>💡 Hint: Check the internal data of the Image... The truth is in the raw data</span>';
-        }
-        // Level 6 specific hint
-        else if (currentLevel === 'level6Section') {
-            errorDiv.innerHTML = '<span class="error-text">❌ INVALID VOID COMMAND<br>💡 Hint: Decode the image, explore the bytes. The Shadow Entity has left co-ordinates</span>';
-        }
-        // Level 7 specific hint
-        else if (currentLevel === 'level7Section') {
-            errorDiv.innerHTML = '<span class="error-text">❌ INVALID HANDSHAKE CODE<br>💡 Hint: Two signals. Light flickers (count them). Radio speaks in rhythm. Combine the two words.</span>';
-        }
-        
-        // Shake animation
-        const terminalContainer = document.querySelector('.terminal-container');
-        terminalContainer.style.animation = 'shake 0.5s';
-        setTimeout(() => {
-            terminalContainer.style.animation = '';
-        }, 500);
     }
 }
 
@@ -2240,16 +2058,15 @@ const level7TotalSlides = 5;
 let level7AudioPlayCount = 0;
 let level7FlickerTimeout = null;
 
-// Binary code for "CRITICAL"
 const binaryCode = [
-    '01000011', // C
-    '01010010', // R
-    '01001001', // I
-    '01010100', // T
-    '01001001', // I
-    '01000011', // C
-    '01000001', // A
-    '01001100'  // L
+    '01000011',
+    '01010010',
+    '01001001',
+    '01010100',
+    '01001001',
+    '01000011',
+    '01000001',
+    '01001100'
 ];
 
 // Show Level 7
