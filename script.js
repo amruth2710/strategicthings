@@ -607,8 +607,8 @@ async function checkPassword() {
     successDiv.style.display = 'none';
     
     // Extract level number from section ID
-    const levelMatch = currentLevel.match(/level(\d)/);
-    const levelNumber = levelMatch ? parseInt(levelMatch[1]) : 1;
+    const levelMatch = /level(\d)/.exec(currentLevel);
+    const levelNumber = levelMatch ? Number.parseInt(levelMatch[1], 10) : 1;
     
     try {
         // Call Netlify Function for server-side validation
@@ -617,10 +617,11 @@ async function checkPassword() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ password, level: levelNumber })
         });
-        
+
         const data = await response.json();
+        const isCorrect = Boolean(data.isCorrect);
         
-        if (data.isCorrect) {
+        if (isCorrect) {
             // Correct password
             successDiv.style.display = 'block';
             playClickSound();
@@ -666,8 +667,9 @@ async function checkPassword() {
             }, 500);
         }
     } catch (error) {
-        // Fallback: network error or function unavailable
+        // Function unavailable / network error
         console.error('Validation error:', error);
+
         errorDiv.style.display = 'block';
         errorDiv.innerHTML = '<span class="error-text">❌ SYSTEM ERROR<br>Connection lost. Try again.</span>';
         input.focus();
@@ -1574,9 +1576,12 @@ function showLevel4Puzzle() {
 function setupLevel4Puzzle() {
     const unlockBtn = document.getElementById('level4UnlockBtn');
     const scanBtn = document.getElementById('initiateScanBtn');
-    const riddleModal = document.getElementById('riddleModal');
-    const riddleCloseBtn = document.getElementById('riddleCloseBtn');
+    const scannerRiddleContent = document.getElementById('scannerRiddleContent');
     const downloadBtn = document.getElementById('downloadAudioBtn');
+    const hintBulbBtn = document.getElementById('hintBulbBtn');
+    const scannerModal = document.getElementById('scannerModal');
+    const scannerModalOverlay = document.getElementById('scannerModalOverlay');
+    const scannerModalCloseBtn = document.getElementById('scannerModalCloseBtn');
     
     // Unlock button
     unlockBtn.addEventListener('click', function() {
@@ -1585,20 +1590,36 @@ function setupLevel4Puzzle() {
     
     // Scanner button
     scanBtn.addEventListener('click', function() {
-        riddleModal.style.display = 'flex';
-    });
-    
-    // Close riddle modal
-    riddleCloseBtn.addEventListener('click', function() {
-        riddleModal.style.display = 'none';
-    });
-    
-    // Close on outside click
-    riddleModal.addEventListener('click', function(e) {
-        if (e.target === riddleModal) {
-            riddleModal.style.display = 'none';
+        if (scannerRiddleContent) {
+            scannerRiddleContent.style.display = 'block';
+            scannerRiddleContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     });
+
+    if (hintBulbBtn) {
+        hintBulbBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            scannerModal.style.display = 'flex';
+            if (scannerRiddleContent) scannerRiddleContent.style.display = 'none';
+        });
+    }
+
+    if (scannerModalCloseBtn) {
+        scannerModalCloseBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            scannerModal.style.display = 'none';
+            if (scannerRiddleContent) scannerRiddleContent.style.display = 'none';
+        });
+    }
+
+    if (scannerModalOverlay) {
+        scannerModalOverlay.addEventListener('click', function(e) {
+            if (e.target === scannerModalOverlay) {
+                scannerModal.style.display = 'none';
+                if (scannerRiddleContent) scannerRiddleContent.style.display = 'none';
+            }
+        });
+    }
     
     // Download audio button
     downloadBtn.addEventListener('click', function() {
