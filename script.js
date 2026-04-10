@@ -532,7 +532,7 @@ function startBulbFlicker() {
     // Continue flickering in sequence (faster timing)
     flickerInterval = setInterval(() => {
         flickerNextLetter();
-    }, 300);
+    }, 800);
 }
 
 // Terminal Modal Functions
